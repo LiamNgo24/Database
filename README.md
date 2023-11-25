@@ -34,18 +34,6 @@ A Real Estate Property Management System (REPMS) is a comprehensive tool designe
 
 ### Technical Considerations
 
-*Security*: Implement robust security measures to protect sensitive tenant and owner data, comply with data protection regulations, and ensure secure financial transactions.
-
 *Usability*: Design an intuitive user interface that simplifies complex property management tasks for various user roles, including property managers, tenants, and owners.
 
 *Scalability*: Ensure the system can handle an increasing number of properties, transactions, and users without performance degradation.
-
-*Integration*: Capability to integrate with other software used in real estate, such as accounting systems, CRM software, or MLS (Multiple Listing Service).
-
-*Backup and Recovery*: Implement data backup and recovery strategies to prevent data loss and ensure business continuity in case of system failures.
-
-*Customizability*: Allow for customization to accommodate the specific workflows and policies of different real estate management companies.
-
-*Mobile Access*: A mobile-responsive design or a dedicated mobile app to allow users to access the system on-the-go.
-
-Building such a system will not only require a solid understanding of MySQL for database design but also likely involve additional technologies for the front-end interface, backend logic, security, and possibly cloud services for hosting the database and application.
