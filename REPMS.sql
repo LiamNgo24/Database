@@ -86,7 +86,7 @@ CREATE TABLE FinancialTransactions (
 
 -- Creating Listings Table
 CREATE TABLE Listings (
-    ListingID INT PRIMARY KEY,
+    ListingID INT AUTO_INCREMENT PRIMARY KEY,
     PropertyID INT,
     ListingDescription TEXT,
     PublishedDate DATE,
