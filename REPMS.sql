@@ -11,6 +11,8 @@ CREATE TABLE Properties (
     PropertyType VARCHAR(50), -- 'Commercial' or 'Residential'
     Size INT,
     Amenities TEXT,
+    RentalPrice DECIMAL,
+    ListingStatus VARCHAR(50),
     Status VARCHAR(50) -- 'Occupied', 'Available', 'Under Maintenance'
 );
 
@@ -81,3 +83,14 @@ CREATE TABLE FinancialTransactions (
     FOREIGN KEY (TenantID) REFERENCES Tenants(TenantID),
     FOREIGN KEY (OwnerID) REFERENCES Owners(OwnerID)
 );
+
+-- Creating Listings Table
+CREATE TABLE Listings (
+    ListingID INT PRIMARY KEY,
+    PropertyID INT,
+    ListingDescription TEXT,
+    PublishedDate DATE,
+    LeaseTerms TEXT,
+    FOREIGN KEY (PropertyID) REFERENCES Properties(PropertyID)
+);
+

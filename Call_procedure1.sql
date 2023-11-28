@@ -5,6 +5,3 @@ CALL `repms`.`InsertRandomVendors`(100);
 CALL `repms`.`InsertRandomFinancialTransactions`(100);
 CALL `repms`.`InsertRandomLeases`(100);
 CALL `repms`.`InsertRandomMaintenanceRequests`(100);
-
-
-
