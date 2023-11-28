@@ -1,6 +1,6 @@
 A Real Estate Property Management System (REPMS) is a comprehensive tool designed to handle the end-to-end operations of real estate properties, from listing and leasing to maintenance and financial management. Here's a detailed breakdown of what such a system might include:
 
-### Database Schema Design
+💾 ## Database Schema Design
 
 *Properties Table*: Contains detailed records for each property, including unique identifiers, addresses, property types (commercial, residential), size specifications, amenities, and status (occupied, available, under maintenance).
 
@@ -16,9 +16,9 @@ A Real Estate Property Management System (REPMS) is a comprehensive tool designe
 
 *Financial Transactions Table*: Captures all financial transactions, including rent payments, maintenance costs, property taxes, insurance payments, and income from tenants.
 
-### System Features
+🚩 ## System Features
 
-*Listing Management*: Allows agents or property owners to create, update, and publish listings for available properties. This includes uploading photos, setting rental prices, and defining lease terms.
+✅ *Listing Management*: Allows agents or property owners to create, update, and publish listings for available properties. This includes uploading photos, setting rental prices, and defining lease terms.
 
 *Maintenance Coordination*: Enables tenants to submit maintenance requests and tracks the progress of each request. Property managers can assign tasks to specific vendors and schedule repairs.
 
@@ -34,7 +34,7 @@ A Real Estate Property Management System (REPMS) is a comprehensive tool designe
 
 *Tenant and Owner Portals*: Secure web portals where tenants can pay rent, request maintenance, and communicate with property managers. Similarly, owners can view financial reports, property status, and maintenance updates.
 
-### Technical Considerations
+🏴‍☠️ ## Technical Considerations
 
 *Usability*: Design an intuitive user interface that simplifies complex property management tasks for various user roles, including property managers, tenants, and owners.
 
