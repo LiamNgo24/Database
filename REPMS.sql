@@ -11,9 +11,9 @@ CREATE TABLE Properties (
     PropertyType VARCHAR(50), -- 'Commercial' or 'Residential'
     Size INT,
     Amenities TEXT,
+    Status VARCHAR(50), -- 'Occupied', 'Available', 'Under Maintenance'
     RentalPrice DECIMAL,
-    ListingStatus VARCHAR(50),
-    Status VARCHAR(50) -- 'Occupied', 'Available', 'Under Maintenance'
+    ListingStatus VARCHAR(50)
 );
 
 -- Creating Owners Table

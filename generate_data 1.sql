@@ -1,23 +1,26 @@
 DELIMITER $$
 CREATE PROCEDURE InsertRandomProperties(IN NumRows INT)
 BEGIN
-   DECLARE i INT;
-   SET i = 1;
-   START TRANSACTION;
-   WHILE i <= NumRows DO
-       INSERT INTO Properties VALUES (
-           i,
-           CONCAT('Address ', i),
-           ELT(1 + FLOOR(RAND() * 2), 'Commercial', 'Residential'),
-           FLOOR(1000 + RAND() * 10000),
-           'Amenities ',
-           ELT(1 + FLOOR(RAND() * 3), 'Occupied', 'Available', 'Under Maintenance')
-       );
-       SET i = i + 1;
-   END WHILE;
-   COMMIT;
+    DECLARE i INT;
+    SET i = 1;
+    START TRANSACTION;
+    WHILE i <= NumRows DO
+        INSERT INTO Properties (PropertyID, Address, PropertyType, Size, Amenities, Status, RentalPrice, ListingStatus) VALUES (
+            i,
+            CONCAT('Address ', i),
+            ELT(1 + FLOOR(RAND() * 2), 'Commercial', 'Residential'),
+            FLOOR(1000 + RAND() * 10000),
+            'Amenities ',
+            ELT(1 + FLOOR(RAND() * 3), 'Occupied', 'Available', 'Under Maintenance'),
+            FLOOR(500 + RAND() * 1500), -- Assuming rental price is between 500 to 2000
+            ELT(1 + FLOOR(RAND() * 2), 'Listed', 'Not Listed') -- Assuming these are the only two statuses
+        );
+        SET i = i + 1;
+    END WHILE;
+    COMMIT;
 END$$
 DELIMITER ;
+
 
 DELIMITER $$
 CREATE PROCEDURE InsertRandomOwners(IN NumRows INT)
