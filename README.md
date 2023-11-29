@@ -26,11 +26,11 @@ A Real Estate Property Management System (REPMS) is a comprehensive tool designe
 
 *Financial Management*: A comprehensive module that handles billing, rent collection, expense tracking, and financial reporting. This module would support various payment methods and generate financial reports for accounting purposes.
 
+✅ *Reporting and Analytics*: Dashboards and reports that provide insights into occupancy rates, financial performance, maintenance costs, and other key metrics. This could also include forecasting tools for predicting rental market trends or property valuation changes.
+
 ======================
 
 *Notification and Communication System*: Automated email or SMS notifications for rent reminders, maintenance updates, lease renewals, and other important communications.
-
-*Reporting and Analytics*: Dashboards and reports that provide insights into occupancy rates, financial performance, maintenance costs, and other key metrics. This could also include forecasting tools for predicting rental market trends or property valuation changes.
 
 *Lease Tracking and Management*: Automates the process of tracking lease expirations, renewals, and rent increases. It could also generate lease agreements based on predefined templates.
 
