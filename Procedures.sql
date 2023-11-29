@@ -12,7 +12,7 @@ BEGIN
             ELT(1 + FLOOR(RAND() * 2), 'Commercial', 'Residential'),
             FLOOR(1000 + RAND() * 10000),
             'Amenities ',
-            ELT(1 + FLOOR(RAND() * 3), 'Occupied', 'Available', 'Under Maintenance'),
+            ELT(1 + FLOOR(RAND() * 4), 'Occupied', 'Available', 'Under Maintenance', 'Available'),
             FLOOR(500 + RAND() * 1500), -- Assuming rental price is between 500 to 2000
             ELT(1 + FLOOR(RAND() * 2), 'Listed', 'Not Listed') -- Assuming these are the only two statuses
         );
