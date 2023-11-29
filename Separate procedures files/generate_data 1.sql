@@ -84,26 +84,61 @@ BEGIN
 END$$
 DELIMITER ;
 
+-- DELIMITER $$
+-- CREATE PROCEDURE InsertRandomMaintenanceRequests(IN NumRows INT)
+-- BEGIN
+--    DECLARE i INT;
+--    SET i = 1;
+--    START TRANSACTION;
+--    WHILE i <= NumRows DO
+--        INSERT INTO MaintenanceRequests VALUES (
+--            i,
+--            FLOOR(1 + RAND() * 100),
+--            'Issue Reported ',
+--            'Unit Affected ',
+--            ELT(1 + FLOOR(RAND() * 3), 'Low', 'Medium', 'High'),
+--            ELT(1 + FLOOR(RAND() * 3), 'Pending', 'In Progress', 'Completed'),
+--            '0',
+--            CURDATE()
+--        );
+--        SET i = i + 1;
+--    END WHILE;
+--    COMMIT;
+-- END$$
+-- DELIMITER ;
+
+-- Assuming you are inserting random maintenance requests and assigning them to random vendors
 DELIMITER $$
-CREATE PROCEDURE InsertRandomMaintenanceRequests(IN NumRows INT)
+CREATE PROCEDURE `InsertRandomMaintenanceRequests`(IN NumRequests INT)
 BEGIN
-   DECLARE i INT;
-   SET i = 1;
-   START TRANSACTION;
-   WHILE i <= NumRows DO
-       INSERT INTO MaintenanceRequests VALUES (
-           i,
-           FLOOR(1 + RAND() * 100),
-           'Issue Reported ',
-           'Unit Affected ',
-           ELT(1 + FLOOR(RAND() * 3), 'Low', 'Medium', 'High'),
-           ELT(1 + FLOOR(RAND() * 3), 'Pending', 'In Progress', 'Completed')
-       );
-       SET i = i + 1;
-   END WHILE;
-   COMMIT;
-END$$
+    DECLARE i INT DEFAULT 1;
+    DECLARE randVendorID, randPropertyID INT;
+    DECLARE maxVendorID, maxPropertyID INT;
+
+    SELECT MAX(VendorID) INTO maxVendorID FROM Vendors;
+    SELECT MAX(PropertyID) INTO maxPropertyID FROM Properties;
+
+    WHILE i <= NumRequests DO
+        -- Ensure the random IDs exist in their respective tables
+        SET randVendorID = FLOOR(1 + RAND() * maxVendorID);
+        SET randPropertyID = FLOOR(1 + RAND() * maxPropertyID);
+
+        INSERT INTO MaintenanceRequests (PropertyID, IssueReported, UnitAffected, UrgencyLevel, RequestStatus, VendorID, ScheduledDate)
+        VALUES (
+            randPropertyID,
+            CONCAT('Issue ', i),
+            CONCAT('Unit ', i),
+            ELT(1 + FLOOR(RAND() * 3), 'Low', 'Medium', 'High'),
+            'Pending',
+            randVendorID,
+            CURDATE() -- Or however you determine the date
+        );
+
+        SET i = i + 1;
+    END WHILE;
+END $$
 DELIMITER ;
+
 
 DELIMITER $$
 CREATE PROCEDURE InsertRandomVendors(IN NumRows INT)

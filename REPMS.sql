@@ -50,17 +50,6 @@ CREATE TABLE Leases (
     FOREIGN KEY (TenantID) REFERENCES Tenants(TenantID)
 );
 
--- Creating Maintenance Requests Table
-CREATE TABLE MaintenanceRequests (
-    RequestID INT PRIMARY KEY,
-    PropertyID INT,
-    IssueReported TEXT,
-    UnitAffected VARCHAR(255),
-    UrgencyLevel VARCHAR(50), -- e.g., 'Low', 'Medium', 'High'
-    RequestStatus VARCHAR(50), -- 'Pending', 'In Progress', 'Completed'
-    FOREIGN KEY (PropertyID) REFERENCES Properties(PropertyID)
-);
-
 -- Creating Vendors Table
 CREATE TABLE Vendors (
     VendorID INT PRIMARY KEY,
@@ -68,6 +57,20 @@ CREATE TABLE Vendors (
     ServicesOffered TEXT,
     Rates DECIMAL,
     PerformanceRatings VARCHAR(255)
+);
+
+-- Creating Maintenance Requests Table
+CREATE TABLE MaintenanceRequests (
+    RequestID INT AUTO_INCREMENT PRIMARY KEY,
+    PropertyID INT,
+    IssueReported TEXT,
+    UnitAffected VARCHAR(255),
+    UrgencyLevel VARCHAR(50), -- e.g., 'Low', 'Medium', 'High'
+    RequestStatus VARCHAR(50), -- 'Pending', 'In Progress', 'Completed'
+    VendorID INT,
+    ScheduledDate DATE,
+    FOREIGN KEY (VendorID) REFERENCES Vendors(VendorID),
+    FOREIGN KEY (PropertyID) REFERENCES Properties(PropertyID)
 );
 
 -- Creating Financial Transactions Table
