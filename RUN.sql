@@ -164,30 +164,6 @@ BEGIN
 END$$
 DELIMITER ;
 
--- DELIMITER $$
--- CREATE PROCEDURE InsertRandomLeases(IN NumRows INT)
--- BEGIN
---    DECLARE i INT;
---    SET i = 1;
---    START TRANSACTION;
---    WHILE i <= NumRows DO
---        INSERT INTO Leases VALUES (
---            i,
---            FLOOR(1 + RAND() * 100),
---            FLOOR(1 + RAND() * 100),
---            CURDATE() - INTERVAL FLOOR(RAND() * 365) DAY,
---            CURDATE() - INTERVAL FLOOR(RAND() * 365) DAY,
---            RAND() * 1000,
---            RAND() * 100,
---            'Lease Terms ',
---            'Unpaid'
---        );
---        SET i = i + 1;
---    END WHILE;
---    COMMIT;
--- END$$
--- DELIMITER ;
-
 DELIMITER $$
 
 CREATE PROCEDURE InsertRandomLeases(IN NumRows INT)
@@ -226,30 +202,6 @@ BEGIN
 END$$
 
 DELIMITER ;
-
-
--- DELIMITER $$
--- CREATE PROCEDURE InsertRandomMaintenanceRequests(IN NumRows INT)
--- BEGIN
---    DECLARE i INT;
---    SET i = 1;
---    START TRANSACTION;
---    WHILE i <= NumRows DO
---        INSERT INTO MaintenanceRequests VALUES (
---            i,
---            FLOOR(1 + RAND() * 100),
---            'Issue Reported ',
---            'Unit Affected ',
---            ELT(1 + FLOOR(RAND() * 3), 'Low', 'Medium', 'High'),
---            ELT(1 + FLOOR(RAND() * 3), 'Pending', 'In Progress', 'Completed'),
---            '0',
---            CURDATE()
---        );
---        SET i = i + 1;
---    END WHILE;
---    COMMIT;
--- END$$
--- DELIMITER ;
 
 -- Assuming you are inserting random maintenance requests and assigning them to random vendors
 DELIMITER $$
@@ -688,4 +640,3 @@ CALL `repms`.`InsertRandomTenants`(100);
 CALL `repms`.`InsertRandomVendors`(100);
 CALL `repms`.`InsertRandomFinancialTransactions`(100);
 CALL `repms`.`InsertRandomLeases`(100);
-
