@@ -46,6 +46,7 @@ CREATE TABLE Leases (
     RentalAmount DECIMAL,
     SecurityDeposit DECIMAL,
     LeaseTerms TEXT,
+    PaymentStatus TEXT,
     FOREIGN KEY (PropertyID) REFERENCES Properties(PropertyID),
     FOREIGN KEY (TenantID) REFERENCES Tenants(TenantID)
 );
@@ -75,7 +76,7 @@ CREATE TABLE MaintenanceRequests (
 
 -- Creating Financial Transactions Table
 CREATE TABLE FinancialTransactions (
-    TransactionID INT PRIMARY KEY,
+    TransactionID INT AUTO_INCREMENT PRIMARY KEY,
     PropertyID INT,
     TenantID INT,
     OwnerID INT,

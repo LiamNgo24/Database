@@ -31,9 +31,9 @@ BEGIN
     -- Insert overdue payments into temporary table
     INSERT INTO OverduePayments (TenantID, LeaseID, DaysLate, AmountDue)
     -- The below SELECT statement should be customized to match your database schema
-    SELECT TenantID, LeaseID, DATEDIFF(today, RentDueDate) AS DaysLate, RentalAmount
+    SELECT TenantID, LeaseID, DATEDIFF(today, EndDate) AS DaysLate, RentalAmount
     FROM Leases
-    WHERE RentDueDate < today AND PaymentStatus = 'Unpaid';
+    WHERE EndDate < today AND PaymentStatus = 'Unpaid';
 
     -- Calculate the interest due for each overdue payment
     -- Customize this calculation based on your specific interest rules
