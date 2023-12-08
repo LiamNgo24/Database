@@ -26,19 +26,19 @@ A Real Estate Property Management System (REPMS) is a comprehensive tool designe
 
 ✅ *Maintenance Coordination*: Enables tenants to submit maintenance requests and tracks the progress of each request. Property managers can assign tasks to specific vendors and schedule repairs.
 
-*Automated Interest Calculation*: For late payments, a procedure that calculates and applies the appropriate interest or late fees based on the number of days late.
+✅ *Automated Interest Calculation*: For late payments, a procedure that calculates and applies the appropriate interest or late fees based on the number of days late.
 
 ✅ *Reporting and Analytics*: Dashboards and reports that provide insights into occupancy rates, financial performance, maintenance costs, and other key metrics. This could also include forecasting tools for predicting rental market trends or property valuation changes.
 
 ======================
 
-*Financial Management*: A comprehensive module that handles billing, rent collection, expense tracking, and financial reporting. This module would support various payment methods and generate financial reports for accounting purposes.
+⏸️ *Financial Management*: A comprehensive module that handles billing, rent collection, expense tracking, and financial reporting. This module would support various payment methods and generate financial reports for accounting purposes.
 
-*Notification and Communication System*: Automated email or SMS notifications for rent reminders, maintenance updates, lease renewals, and other important communications.
+⏸️ *Notification and Communication System*: Automated email or SMS notifications for rent reminders, maintenance updates, lease renewals, and other important communications.
 
-*Lease Tracking and Management*: Automates the process of tracking lease expirations, renewals, and rent increases. It could also generate lease agreements based on predefined templates.
+⏸️ *Lease Tracking and Management*: Automates the process of tracking lease expirations, renewals, and rent increases. It could also generate lease agreements based on predefined templates.
 
-*Tenant and Owner Portals*: Secure web portals where tenants can pay rent, request maintenance, and communicate with property managers. Similarly, owners can view financial reports, property status, and maintenance updates.
+⏸️ *Tenant and Owner Portals*: Secure web portals where tenants can pay rent, request maintenance, and communicate with property managers. Similarly, owners can view financial reports, property status, and maintenance updates.
 
 ## Technical Considerations 🏴‍☠️
 
