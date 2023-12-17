@@ -633,7 +633,7 @@ END //
 DELIMITER ;
 
 
--- Call_procedure1.sql
+-- call procedures that generates random data into tables - Call_procedure1.sql
 CALL `repms`.`InsertRandomProperties`(100);
 CALL `repms`.`InsertRandomOwners`(100);
 CALL `repms`.`InsertRandomTenants`(100);
